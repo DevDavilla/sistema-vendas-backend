@@ -13,13 +13,11 @@ const relatoriosRoutes = require("./src/routes/relatorios");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// --- NOVO: Configuração CORS definitiva (para desenvolvimento) ---
-// Esta lista de origens DEVE ser atualizada a CADA SESSÃO NGROK
 const corsOptions = {
   origin: [
     "http://localhost:5173", // Para o frontend local
     "http://127.0.0.1:5173", // Para o frontend local
-    "https://396d-190-102-47-102.ngrok-free.app",
+    "https://sistema-vendas-backend-no8y.onrender.com",
     "https://196c-190-102-47-102.ngrok-free.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
