@@ -18,7 +18,7 @@ const corsOptions = {
     "http://localhost:5173", // Para o frontend local
     "http://127.0.0.1:5173", // Para o frontend local
     "https://sistema-vendas-backend-no8y.onrender.com",
-    "https://196c-190-102-47-102.ngrok-free.app",
+    "https://sistema-vendas-frontend-rre5.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
