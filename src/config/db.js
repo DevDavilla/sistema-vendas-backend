@@ -1,13 +1,11 @@
-require("dotenv").config(); // Carrega as variáveis de ambiente
+require("dotenv").config();
 
 const { Pool } = require("pg");
-
-// Prioriza DATABASE_URL (para Render) e faz fallback para vars separadas (para local)
 const pool = new Pool({
   connectionString:
     process.env.DATABASE_URL ||
-    `postgres://<span class="math-inline">\{process\.env\.DB\_USER\}\:</span>{process.env.DB_PASSWORD}@<span class="math-inline">\{process\.env\.DB\_HOST\}\:</span>{process.env.DB_PORT}/${process.env.DB_DATABASE}`,
-  ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false, // Necessário para Render com HTTPS
+    `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`,
+  ssl: process.env.DATABASE_URL ? { rejectUnauthorized: false } : false,
 });
 
 // Tenta conectar ao banco de dados e registra o resultado

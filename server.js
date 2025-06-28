@@ -45,4 +45,8 @@ app.use("/api/relatorios", relatoriosRoutes);
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Servidor rodando na porta ${PORT}`);
   console.log(`Acessível na rede local em http://192.168.18.9:${PORT}`);
+  console.log(
+    "Host do banco:",
+    process.env.DB_HOST || process.env.DATABASE_URL
+  );
 });
