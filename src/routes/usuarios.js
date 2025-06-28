@@ -12,7 +12,7 @@ const saltRounds = 10;
 
 // Rota para LISTAR todos os usuários
 // Protegida: Requer autenticação (qualquer usuário logado pode ver)
-router.get("/", authMiddleware, async (req, res) => {
+router.get("/", authMiddleware, checkPermission("admin"), async (req, res) => {
   try {
     const result = await pool.query(
       "SELECT id, nome_usuario, permissao, ativo, criado_em FROM usuarios ORDER BY nome_usuario ASC"
